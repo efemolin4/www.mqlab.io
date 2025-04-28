@@ -14,9 +14,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            justify-content: start;
+            min-height: 100vh;
             text-align: center;
+            padding-top: 2rem;
+        }
+        main {
+            width: 90%;
+            max-width: 800px;
         }
         h1 {
             font-size: 3rem;
@@ -25,7 +30,19 @@
         p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            max-width: 600px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
         }
         a {
             color: #00ffe7;
@@ -34,10 +51,14 @@
             padding: 0.5rem 1rem;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
+            margin: 0 0.5rem;
         }
         a:hover {
             background-color: #00ffe7;
             color: #0a0a0a;
+        }
+        .buttons {
+            margin-top: 1.5rem;
         }
     </style>
 </head>
@@ -46,11 +67,23 @@
         <h1>MQLab</h1>
         <p>Impulsamos oportunidades comerciales para empresas de tecnología. Actuamos como tu departamento de marketing generando MQLs que alimentan tu crecimiento.</p>
         
-        <p>Contáctanos</p>
-         <div class="buttons">
-            <a class="button" href="mailto:contacto@mqlab.com">Correo</a>
-            <a class="button" href="https://www.linkedin.com/in/felipemolinacatalan/" target="_blank">LinkedIn</a>
-            <a class="button" href="https://wa.me/56990802201" target="_blank">WhatsApp</a>
+        <h2>Servicios</h2>
+        <ul>
+            <li><strong>Planeación Estratégica</strong></li>
+            <li><strong>Marketing Estratégico enfocado en empresas tech</strong></li>
+            <li><strong>Generación de Reuniones Comerciales</strong></li>
+            <li><strong>Estrategia y Gestión SDR (Outbound + Inbound)</strong></li>
+            <li><strong>Generación de Contenido de Apoyo Comercial</strong></li>
+            <li><strong>Fidelización y Programas de NPS</strong></li>
+            <li><strong>Automatización Ligera de Marketing y Lead Nurturing</strong></li>
+            <li><strong>Assessment Inicial de Marketing & Ventas</strong></li>
+        </ul>
+
+        <h2>Contáctanos</h2>
+        <div class="buttons">
+            <a href="mailto:contacto@mqlab.com">Correo</a>
+            <a href="https://www.linkedin.com/in/felipemolinacatalan/" target="_blank">LinkedIn</a>
+            <a href="https://wa.me/56990802201" target="_blank">WhatsApp</a>
         </div>
     </main>
 </body>
