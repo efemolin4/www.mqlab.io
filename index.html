@@ -23,37 +23,46 @@
             display: flex;
             flex-direction: column;
             text-align: center;
-            padding: 5vh 20px 5vh;
+            padding: 5vh 20px;
         }
         
-        main {
+        .content-wrapper {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between;
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
+            height: calc(100% - 10vh);
+        }
+        
+        .header-content {
+            margin-bottom: auto;
+            padding-top: 5vh;
         }
         
         h1 {
-            font-size: min(8vw, 3.5rem);
-            margin-bottom: min(4vw, 1.5rem);
-            color: #00ffe7;
-            line-height: 1.2;
+            font-size: min(10vw, 4.5rem);
+            margin-bottom: min(5vw, 2rem);
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+            font-weight: 700;
         }
         
-        h1 .white-L {
+        .white-letters {
             color: #ffffff;
+            position: relative;
         }
         
         .lead {
-            font-size: min(4vw, 1.3rem);
+            font-size: min(4.5vw, 1.5rem);
             color: #ffffff;
-            margin-bottom: min(8vw, 2rem);
-            line-height: 1.4;
+            margin-bottom: min(8vw, 3rem);
+            line-height: 1.5;
             max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .lead strong {
@@ -63,33 +72,33 @@
         
         .footer-content {
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-top: min(4vw, 2rem);
+            padding-bottom: 5vh;
         }
         
         .section-title {
-            font-size: min(6vw, 2rem);
-            margin-bottom: min(4vw, 1.5rem);
+            font-size: min(5vw, 1.8rem);
+            margin-bottom: min(5vw, 1.8rem);
             color: #00ffe7;
+            font-weight: 600;
         }
         
         .buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: min(2vw, 1rem);
+            gap: min(3vw, 1.2rem);
         }
         
         a.button {
             color: #00ffe7;
             text-decoration: none;
             border: 1px solid #00ffe7;
-            padding: min(2vw, 0.8rem) min(4vw, 1.8rem);
+            padding: min(2.5vw, 1rem) min(5vw, 2rem);
             border-radius: 5px;
             transition: all 0.3s ease;
-            font-size: min(4vw, 1rem);
+            font-size: min(4vw, 1.1rem);
             white-space: nowrap;
+            font-weight: 600;
         }
         
         a.button:hover {
@@ -102,53 +111,67 @@
                 padding: 5vh 15px;
             }
             
+            h1 {
+                font-size: min(12vw, 3.5rem);
+            }
+            
+            .lead {
+                font-size: min(5vw, 1.3rem);
+            }
+            
             .buttons {
                 flex-direction: column;
                 align-items: center;
-                gap: min(3vw, 0.8rem);
+                gap: min(3vw, 1rem);
             }
             
             a.button {
                 width: 100%;
-                max-width: 250px;
-                text-align: center;
-                padding: min(3vw, 0.8rem) min(4vw, 1.8rem);
+                max-width: 220px;
             }
         }
 
         @media (max-height: 700px) {
-            body {
-                padding: 2vh 20px;
-            }
-            
             h1 {
-                font-size: min(7vw, 2.5rem);
-                margin-bottom: min(3vw, 1rem);
+                font-size: min(9vw, 3.5rem);
+                margin-bottom: min(4vw, 1.5rem);
             }
             
             .lead {
-                font-size: min(3.5vw, 1.1rem);
-                margin-bottom: min(6vw, 1.5rem);
-                line-height: 1.3;
+                font-size: min(4vw, 1.3rem);
+                margin-bottom: min(6vw, 2rem);
+            }
+            
+            .section-title {
+                margin-bottom: min(4vw, 1.5rem);
             }
         }
     </style>
 </head>
 <body>
-    <main>
-        <h1>MQ<span class="white-L">L</span>ab</h1>
-        <p class="lead">
-            Conectamos <strong>empresas de tecnología</strong> con nuevas <strong>oportunidades comerciales</strong>.<br>
-            Creamos estrategias que generan MQLs para acelerar tu crecimiento.
-        </p>
-    </main>
+    <div class="content-wrapper">
+        <div class="header-content">
+            <h1>
+                <span class="white-letters">M</span>
+                <span class="white-letters">Q</span>
+                <span class="white-letters">L</span>
+                <span>ab</span>
+            </h1>
+            <p class="lead">
+                Conectamos <strong>empresas de tecnología</strong> con nuevas<br>
+                <strong>oportunidades comerciales</strong>.<br><br>
+                Creamos estrategias que generan MQLs<br>
+                para acelerar tu crecimiento.
+            </p>
+        </div>
 
-    <div class="footer-content">
-        <h2 class="section-title">Contáctanos</h2>
-        <div class="buttons">
-            <a class="button" href="mailto:contacto@mqlab.com">Correo</a>
-            <a class="button" href="https://www.linkedin.com/in/felipemolinacatalan/" target="_blank">LinkedIn</a>
-            <a class="button" href="https://wa.me/56990802201" target="_blank">WhatsApp</a>
+        <div class="footer-content">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="buttons">
+                <a class="button" href="mailto:felipe.molina@mqlab.io">Correo</a>
+                <a class="button" href="https://www.linkedin.com/in/felipemolinacatalan/" target="_blank">LinkedIn</a>
+                <a class="button" href="https://wa.me/56990802201" target="_blank">WhatsApp</a>
+            </div>
         </div>
     </div>
 </body>
