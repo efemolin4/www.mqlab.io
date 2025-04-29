@@ -14,19 +14,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: start;
+            justify-content: space-between;
             min-height: 100vh;
             text-align: center;
-            padding-top: 2rem;
         }
         main {
             width: 90%;
             max-width: 800px;
+            margin-top: 2rem;
         }
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             color: #00ffe7;
+        }
+        h1 .white-L {
+            color: #ffffff;
         }
         .lead {
             font-size: 1.3rem;
@@ -57,6 +60,7 @@
             justify-content: center;
             gap: 1rem;
             margin-top: 1.5rem;
+            margin-bottom: 2rem;
         }
         a.button {
             color: #00ffe7;
@@ -71,23 +75,27 @@
             background-color: #ffffff;
             color: #0a0a0a;
         }
+        .footer-content {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <main>
-        <h1>MQLab</h1>
+        <h1>MQ<span class="white-L">L</span>ab</h1>
         <p class="lead">
             Conectamos <strong>empresas de tecnología</strong> con nuevas <strong>oportunidades comerciales</strong>.<br>
             Creamos estrategias que generan MQLs para acelerar tu crecimiento.
         </p>
-        
+    </main>
 
+    <div class="footer-content">
         <h2 class="section-title">Contáctanos</h2>
         <div class="buttons">
             <a class="button" href="mailto:contacto@mqlab.com">Correo</a>
             <a class="button" href="https://www.linkedin.com/in/felipemolinacatalan/" target="_blank">LinkedIn</a>
             <a class="button" href="https://wa.me/56990802201" target="_blank">WhatsApp</a>
         </div>
-    </main>
+    </div>
 </body>
 </html>
