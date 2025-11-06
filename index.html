@@ -1,176 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MQLab</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html, body {
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        body {
-            background-color: #0a0a0a;
-            color: #34c4b3;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            padding: 5vh 20px;
-        }
-        
-        .content-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            height: calc(100% - 10vh);
-        }
-        
-        .header-content {
-            margin-bottom: auto;
-            padding-top: 5vh;
-        }
-        
-        h1 {
-            font-size: min(10vw, 4.5rem);
-            margin-bottom: min(5vw, 2rem);
-            line-height: 1.1;
-            font-weight: 700;
-            color: #00ffe7;
-            white-space: nowrap;
-        }
-        
-        .white-M, .white-Q, .white-L {
-            color: #ffffff;
-        }
-        
-        .lead {
-            font-size: min(4.5vw, 1.5rem);
-            color: #ffffff;
-            margin-bottom: min(8vw, 3rem);
-            line-height: 1.5;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .lead strong {
-            color: #00ffe7;
-            font-weight: bold;
-        }
-        
-        .footer-content {
-            width: 100%;
-            padding-bottom: 5vh;
-        }
-        
-        .section-title {
-            font-size: min(5vw, 1.8rem);
-            margin-bottom: min(5vw, 1.8rem);
-            color: #00ffe7;
-            font-weight: 600;
-        }
-        
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: min(3vw, 1.2rem);
-        }
-        
-        a.button {
-            color: #00ffe7;
-            text-decoration: none;
-            border: 1px solid #00ffe7;
-            padding: min(2.5vw, 1rem) min(5vw, 2rem);
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-size: min(4vw, 1.1rem);
-            white-space: nowrap;
-            font-weight: 600;
-        }
-        
-        a.button:hover {
-            background-color: #ffffff;
-            color: #0a0a0a;
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 5vh 15px;
-            }
-            
-            h1 {
-                font-size: min(12vw, 3.5rem);
-            }
-            
-            .lead {
-                font-size: min(5vw, 1.3rem);
-            }
-            
-            .buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: min(3vw, 1rem);
-            }
-            
-            a.button {
-                width: 100%;
-                max-width: 220px;
-            }
-        }
-
-        @media (max-height: 700px) {
-            h1 {
-                font-size: min(9vw, 3.5rem);
-                margin-bottom: min(4vw, 1.5rem);
-            }
-            
-            .lead {
-                font-size: min(4vw, 1.3rem);
-                margin-bottom: min(6vw, 2rem);
-            }
-            
-            .section-title {
-                margin-bottom: min(4vw, 1.5rem);
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MQLab | Servicios de Consultoría</title>
+  <meta name="description" content="Consultoría en marketing estratégico y desarrollo comercial para empresas de tecnología y servicios financieros.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d13;
+      --card:#121624;
+      --muted:#98a2b3;
+      --text:#f2f4f7;
+      --brand:#6ee7b7;       /* toque verde menta */
+      --accent:#60a5fa;      /* azul suave */
+      --border:#1f2433;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --radius:18px;
+      --radius-sm:12px;
+      --pad:24px;
+      --gap:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1180px;margin:0 auto;padding:40px 20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo-badge{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    nav a{color:var(--muted);margin-left:18px}
+    .hero{margin:18px 0 34px;background:linear-gradient(180deg,rgba(110,231,183,.08),rgba(96,165,250,.06));border:1px solid var(--border);box-shadow:var(--shadow);border-radius:var(--radius);padding:40px}
+    .hero h1{margin:0 0 8px;font-size:34px;letter-spacing:-.02em}
+    .hero p{margin:0;color:var(--muted);max-width:860px;line-height:1.6}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:26px}
+    .linea{grid-column:span 12;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+    .linea h2{margin:0 0 8px;font-size:24px;letter-spacing:-.02em}
+    .linea .tag{display:inline-block;background:rgba(110,231,183,.15);color:var(--brand);border:1px solid rgba(110,231,183,.35);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:600;margin:10px 0 4px}
+    .subs{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:18px}
+    .item{grid-column:span 12;background:#0e1220;border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px}
+    .item h3{margin:0 0 6px;font-size:16px}
+    .item p{margin:0;color:var(--muted);line-height:1.55}
+    .meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .pill{font-size:11px;color:#cbd5e1;border:1px dashed #243048;border-radius:999px;padding:4px 8px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#0b0d13;font-weight:700;border:none;border-radius:12px;padding:12px 16px;box-shadow:var(--shadow)}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
+    footer{margin:40px 0 10px;color:var(--muted);font-size:13px;text-align:center}
+    /* responsive */
+    @media (min-width:720px){
+      .item{grid-column:span 6}
+    }
+    @media (min-width:1024px){
+      .linea{grid-column:span 12}
+      .item{grid-column:span 4}
+    }
+  </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <div class="header-content">
-            <h1 class="logo">
-                <span class="white-M">M</span><span class="white-Q">Q</span><span class="white-L">L</span>ab
-            </h1>
-            <p class="lead">
-                Conectamos <strong>empresas de tecnología</strong> con nuevas<br>
-                <strong>oportunidades</strong> comerciales.<br><br>
-                Creamos estrategias que generan MQLs<br>
-                para acelerar tu crecimiento.<br><br>
-                <strong>Obtén conexiones de alto valor</strong>
-            </p>
-        </div>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <span class="logo-badge" aria-hidden="true"></span>
+        <span>MQLab Consulting</span>
+      </div>
+      <nav>
+        <a href="#estrategia">Estrategia</a>
+        <a href="#demanda">Demanda & CX</a>
+        <a href="#procesos">Procesos & Training</a>
+        <a href="#innovacion">Innovación</a>
+      </nav>
+    </header>
 
-        <div class="footer-content">
-            <h2 class="section-title">Conversemos</h2>
-            <div class="buttons">
-                <a class="button" href="mailto:contacto@mqlab.com">Correo</a>
-                <a class="button" href="https://www.linkedin.com/in/felipemolinacatalan/" target="_blank">LinkedIn</a>
-                <a class="button" href="https://wa.me/56990802201" target="_blank">WhatsApp</a>
-            </div>
-        </div>
-    </div>
+    <section class="hero">
+      <h1>Consultoría en Marketing Estratégico y Desarrollo Comercial</h1>
+      <p>Diseñamos y ejecutamos estrategias B2B para empresas de tecnología y servicios financieros: posicionamiento, generación de demanda, procesos comerciales y go-to-market. Enfocados en impacto medible y adopción real en equipos.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:felipe.molina.catalan@gmail.com?subject=Consulta%20Servicios%20MQLab">Agenda una conversación</a>
+        <a class="btn secondary" href="#estrategia">Ver líneas de servicio</a>
+      </div>
+    </section>
+
+    <!-- LÍNEA 1: Estrategia & Posicionamiento -->
+    <section id="estrategia" class="linea">
+      <span class="tag">Línea 1</span>
+      <h2>🎯 Estrategia & Posicionamiento</h2>
+      <p class="muted">Definimos visión, propuesta de valor y foco comercial para acelerar el crecimiento con claridad.</p>
+      <div class="subs">
+        <article class="item">
+          <h3>Estrategia de Marketing</h3>
+          <p>Roadmap integral B2B: segmentación, propuesta de valor, embudos, OKRs y plan de canales.</p>
+          <div class="meta">
+            <span class="pill">Diagnóstico</span><span class="pill">OKRs</span><span class="pill">Roadmap</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Diagnóstico de Madurez Comercial y Marketing</h3>
+          <p>Auditoría rápida de marketing/prospección/posicionamiento para priorizar iniciativas de alto impacto.</p>
+          <div class="meta">
+            <span class="pill">Assessment</span><span class="pill">Prioridades</span><span class="pill">90 días</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Branding & Posicionamiento de Servicios Tech/Fintech</h3>
+          <p>Narrativa, mensajes clave y diferenciadores para servicios TI, QA, medios de pago y productos digitales.</p>
+          <div class="meta">
+            <span class="pill">Storytelling</span><span class="pill">Mensajes</span><span class="pill">ToV</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LÍNEA 2: Generación de Demanda & Fidelización -->
+    <section id="demanda" class="linea">
+      <span class="tag">Línea 2</span>
+      <h2>🚀 Generación de Demanda & Fidelización</h2>
+      <p class="muted">Implementamos prospección, contenido y performance digital para crear pipeline y retención.</p>
+      <div class="subs">
+        <article class="item">
+          <h3>Estrategia de Prospección (Outbound, ABM, SDR)</h3>
+          <p>Proceso completo de hunting: ICP, listas, mensajes, cadencias, automatización y reporting en CRM.</p>
+          <div class="meta">
+            <span class="pill">ABM</span><span class="pill">SDR</span><span class="pill">HubSpot</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Material de Apoyo a la Venta</h3>
+          <p>Casos de éxito, fichas técnicas, one-pagers y decks comerciales alineados al proceso del comprador.</p>
+          <div class="meta">
+            <span class="pill">Sales Enablement</span><span class="pill">One-Pager</span><span class="pill">Deck</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Contenido Corporativo</h3>
+          <p>Web, blog, newsletters y brochures con enfoque técnico-comercial para impulsar conversión.</p>
+          <div class="meta">
+            <span class="pill">SEO/SEM</span><span class="pill">Thought Leadership</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Fidelización y Satisfacción de Clientes (CX)</h3>
+          <p>Encuestas, NPS/CSAT, loops de mejora y programas de retención para contratos recurrentes.</p>
+          <div class="meta">
+            <span class="pill">NPS</span><span class="pill">CSAT</span><span class="pill">Playbooks</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Performance de Canales Digitales</h3>
+          <p>Optimización de ADS, email y orgánico con cuadros de mando y pruebas iterativas.</p>
+          <div class="meta">
+            <span class="pill">Google/LinkedIn Ads</span><span class="pill">Automation</span><span class="pill">KPIs</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LÍNEA 3: Procesos & Capacitación -->
+    <section id="procesos" class="linea">
+      <span class="tag">Línea 3</span>
+      <h2>🧩 Procesos & Capacitación</h2>
+      <p class="muted">Ordenamos la operación comercial-marketing y elevamos capacidades del equipo.</p>
+      <div class="subs">
+        <article class="item">
+          <h3>Arquitectura de Procesos (CRM / Journey)</h3>
+          <p>Definición de flujos desde lead hasta fidelización: etapas, handoffs, SLAs y reporting en CRM.</p>
+          <div class="meta">
+            <span class="pill">Playbooks</span><span class="pill">SLA</span><span class="pill">Operación</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Dirección Comercial & Forecast</h3>
+          <p>Acompañamiento ejecutivo para pipeline, forecast, cadencias y gobierno de datos comerciales.</p>
+          <div class="meta">
+            <span class="pill">Pipeline</span><span class="pill">Forecast</span><span class="pill">Gobierno de datos</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Estrategia de Reuniones Efectivas</h3>
+          <p>Diseño de agendas, discovery, next steps y seguimiento que cierran brechas de conversión.</p>
+          <div class="meta">
+            <span class="pill">Discovery</span><span class="pill">MEDDIC</span><span class="pill">Follow-up</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Entrenamientos & Talleres</h3>
+          <p>Prospección, storytelling comercial, CX y marketing data-driven con ejercicios aplicados.</p>
+          <div class="meta">
+            <span class="pill">Workshops</span><span class="pill">Play-by-play</span><span class="pill">On-the-job</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LÍNEA 4: Innovación & Ecosistema -->
+    <section id="innovacion" class="linea">
+      <span class="tag">Línea 4</span>
+      <h2>🧪 Innovación & Ecosistema</h2>
+      <p class="muted">Impulsamos nuevos negocios y relacionamiento de alto valor en el ecosistema.</p>
+      <div class="subs">
+        <article class="item">
+          <h3>Creación de Productos Digitales</h3>
+          <p>Ideación y validación de MVPs, onboarding y definición de métricas de adopción.</p>
+          <div class="meta">
+            <span class="pill">MVP</span><span class="pill">Onboarding</span><span class="pill">Adopción</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Go-To-Market (GTM) para Productos/Servicios Tech</h3>
+          <p>Estrategia de lanzamiento, pricing inicial, mensajes y canales priorizados con milestones.</p>
+          <div class="meta">
+            <span class="pill">GTM</span><span class="pill">Pricing</span><span class="pill">Milestones</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Alianzas & Vinculación Institucional</h3>
+          <p>Relación con universidades, gremios, partners y medios para amplificar visibilidad y credibilidad.</p>
+          <div class="meta">
+            <span class="pill">Partners</span><span class="pill">PR B2B</span><span class="pill">Ecosistema</span>
+          </div>
+        </article>
+        <article class="item">
+          <h3>Automatización & MarTech</h3>
+          <p>Diagnóstico e implementación de herramientas (HubSpot, Ads, campañas) con gobierno y escalabilidad.</p>
+          <div class="meta">
+            <span class="pill">HubSpot</span><span class="pill">Automation</span><span class="pill">Escala</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> MQLab Consulting — Santiago, Chile · <a href="mailto:felipe.molina.catalan@gmail.com">Contacto</a> · <a href="https://www.linkedin.com/in/felipemolinacatalan" target="_blank" rel="noopener">LinkedIn</a>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
