@@ -1,386 +1,175 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MQLab | Servicios de Consultoría</title>
-  <meta name="description" content="Consultoría en marketing estratégico y desarrollo comercial para empresas de tecnología y servicios financieros.">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Servicios MQLab</title>
+    <style>
+        .accordion {
+            cursor: pointer;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+        }
 
-  <style>
-    :root{
-      --bg:#0b0d13;
-      --card:#121624;
-      --muted:#98a2b3;
-      --text:#f2f4f7;
-      --brand:#6ee7b7;
-      --accent:#60a5fa;
-      --border:#1f2433;
-      --shadow:0 10px 30px rgba(0,0,0,.25);
-      --radius:18px;
-      --radius-sm:12px;
-      --pad:24px;
-      --gap:22px;
-    }
+        .accordion:hover { color: #0066ff; }
 
-    *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      padding:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    }
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1180px;margin:0 auto;padding:40px 20px}
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: #fafafa;
+            padding-left: 15px;
+        }
 
-    /* HEADER */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:20px 0;
-    }
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
-    .logo-badge{
-      width:12px;height:12px;
-      border-radius:50%;
-      background:linear-gradient(135deg,var(--brand),var(--accent));
-    }
-    nav{display:flex;gap:18px}
-    nav a{color:var(--muted);font-size:14px}
-    /* Hamburger */
-    .menu-toggle {
-      display:none;
-      background:none;
-      border:none;
-      color:var(--text);
-      font-size:28px;
-      cursor:pointer;
-    }
+        .panel-content {
+            padding: 10px 0;
+            color: #555;
+            margin: 0;
+        }
 
-    /* HERO */
-    .hero{
-      margin:18px 0 34px;
-      background:linear-gradient(180deg,rgba(110,231,183,.08),rgba(96,165,250,.06));
-      border:1px solid var(--border);
-      box-shadow:var(--shadow);
-      border-radius:var(--radius);
-      padding:40px;
-    }
-    .hero h1{
-      margin:0 0 8px;
-      font-size:clamp(28px,5vw,36px);
-      letter-spacing:-.02em;
-    }
-    .hero p{
-      margin:0;
-      color:var(--muted);
-      max-width:860px;
-      line-height:1.6;
-      font-size:clamp(15px,2.8vw,17px);
-    }
-    .cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:30px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:linear-gradient(135deg,var(--brand),var(--accent));
-      color:#0b0d13;
-      font-weight:700;
-      border:none;
-      border-radius:12px;
-      padding:12px 16px;
-      box-shadow:var(--shadow);
-      cursor:pointer;
-    }
-    .btn.secondary{
-      background:transparent;
-      color:var(--text);
-      border:1px solid var(--border);
-    }
+        .sub-accordion {
+            cursor: pointer;
+            font-weight: 500;
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    /* LÍNEAS */
-    .linea{
-      grid-column:span 12;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:28px;
-      margin-bottom:30px;
-    }
-    .linea h2{
-      margin:0 0 8px;
-      font-size:clamp(22px,3vw,24px);
-      letter-spacing:-.02em;
-    }
-    .subs{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:var(--gap);
-      margin-top:18px;
-    }
-    .item{
-      grid-column:span 12;
-      background:#0e1220;
-      border:1px solid var(--border);
-      border-radius:var(--radius-sm);
-      padding:18px;
-    }
-    .item h3{
-      margin:0 0 6px;
-      font-size:16px;
-    }
-    .item p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.55;
-    }
-    .meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-    .pill{
-      font-size:11px;
-      color:#cbd5e1;
-      border:1px dashed #243048;
-      border-radius:999px;
-      padding:4px 8px;
-    }
+        .sub-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 20px;
+        }
 
-    footer{
-      margin:40px 0 10px;
-      color:var(--muted);
-      font-size:13px;
-      text-align:center;
-    }
+        .arrow {
+            transition: transform 0.3s ease;
+        }
 
-    /* TABLET */
-    @media (min-width:720px){
-      .item{grid-column:span 6}
-    }
-    /* DESKTOP */
-    @media (min-width:1024px){
-      .item{grid-column:span 4}
-    }
-
-    /* MOBILE <480px */
-    @media (max-width:480px){
-      header{flex-direction:row;}
-      nav{display:none;flex-direction:column;gap:14px;background:var(--card);padding:20px;border-radius:var(--radius-sm);}
-      nav.open{display:flex;}
-      .menu-toggle{display:block;}
-      .cta .btn{width:100%;justify-content:center;}
-      .wrap{padding:20px 14px;}
-      .hero{padding:28px;}
-    }
-  </style>
+        .active .arrow {
+            transform: rotate(90deg);
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo">
-        <span class="logo-badge"></span>
-        <span>MQLab Consulting</span>
-      </div>
 
-      <!-- Botón para mobile -->
-      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+<h2>Servicios de Consultoría MQLab</h2>
 
-      <nav>
-        <a href="#estrategia">Estrategia</a>
-        <a href="#demanda">Demanda & CX</a>
-        <a href="#procesos">Procesos & Training</a>
-        <a href="#innovacion">Innovación</a>
-      </nav>
-    </header>
-        <section class="hero">
-      <h1>Consultoría en Marketing Estratégico y Desarrollo Comercial</h1>
-      <p>Diseñamos y ejecutamos estrategias B2B para empresas de tecnología y servicios financieros: posicionamiento, generación de demanda, procesos comerciales y go-to-market. Enfocados en impacto medible y adopción real en equipos.</p>
-      <div class="cta">
-        <a class="btn" href="mailto:felipe.molina.catalan@gmail.com?subject=Consulta%20Servicios%20MQLab">Agenda una conversación</a>
-        <a class="btn secondary" href="#estrategia">Ver líneas de servicio</a>
-      </div>
-    </section>
+<!-- 1. Estrategia & Posicionamiento -->
+<div class="accordion">Estrategia & Posicionamiento <span class="arrow">▶</span></div>
+<div class="panel">
 
-    <!-- LÍNEA 1: Estrategia & Posicionamiento -->
-    <section id="estrategia" class="linea">
-      <h2>Estrategia & Posicionamiento</h2>
-      <p class="muted">Definimos visión, propuesta de valor y foco comercial para acelerar el crecimiento con claridad.</p>
-      <div class="subs">
-        <article class="item">
-          <h3>Estrategia de Marketing</h3>
-          <p>Roadmap integral B2B: segmentación, propuesta de valor, embudos, OKRs y plan de canales.</p>
-          <div class="meta">
-            <span class="pill">Diagnóstico</span><span class="pill">OKRs</span><span class="pill">Roadmap</span>
-          </div>
-        </article>
+    <div class="sub-accordion">Estrategia de Marketing <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Roadmap integral B2B: segmentación, propuesta de valor, embudos, OKRs y plan de canales.</p>
+    </div>
 
-        <article class="item">
-          <h3>Diagnóstico de Madurez Comercial y Marketing</h3>
-          <p>Auditoría de marketing, prospección y posicionamiento para priorizar iniciativas de alto impacto.</p>
-          <div class="meta">
-            <span class="pill">Assessment</span><span class="pill">Prioridades</span><span class="pill">90 días</span>
-          </div>
-        </article>
+    <div class="sub-accordion">Diagnóstico Comercial & Marketing <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Auditoría de marketing, prospección y posicionamiento para priorizar iniciativas de alto impacto.</p>
+    </div>
 
-        <article class="item">
-          <h3>Branding & Posicionamiento</h3>
-          <p>Narrativa, mensajes clave y diferenciadores para servicios TI, QA, medios de pago y productos digitales.</p>
-          <div class="meta">
-            <span class="pill">Storytelling</span><span class="pill">Mensajes</span><span class="pill">ToV</span>
-          </div>
-        </article>
-      </div>
-    </section>
+    <div class="sub-accordion">Branding & Posicionamiento <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Narrativa, mensajes clave y diferenciadores para servicios TI, QA, medios de pago y productos digitales.</p>
+    </div>
 
-    <!-- LÍNEA 2: Generación de Demanda & Fidelización -->
-    <section id="demanda" class="linea">
-      <h2>Generación de Demanda & Fidelización</h2>
-      <p class="muted">Implementamos prospección, contenido y performance digital para generar pipeline y retención.</p>
-      <div class="subs">
-        <article class="item">
-          <h3>Estrategia de Prospección (Outbound, ABM, SDR)</h3>
-          <p>ICP, listas, mensajes, cadencias y automatización en CRM para apertura de oportunidades reales.</p>
-          <div class="meta">
-            <span class="pill">ABM</span><span class="pill">SDR</span><span class="pill">HubSpot</span>
-          </div>
-        </article>
+</div>
 
-        <article class="item">
-          <h3>Material de Apoyo a la Venta</h3>
-          <p>Casos de éxito, fichas, one-pagers y presentaciones alineadas al proceso del comprador.</p>
-          <div class="meta">
-            <span class="pill">Sales Enablement</span><span class="pill">One-Pager</span>
-          </div>
-        </article>
+<!-- 2. Generación de Demanda -->
+<div class="accordion">Generación de Demanda & Fidelización <span class="arrow">▶</span></div>
+<div class="panel">
 
-        <article class="item">
-          <h3>Contenido Corporativo</h3>
-          <p>Web, blog, newsletters y brochures técnicos/comerciales para posicionamiento y conversión.</p>
-          <div class="meta">
-            <span class="pill">SEO</span><span class="pill">Thought Leadership</span>
-          </div>
-        </article>
+    <div class="sub-accordion">Estrategia de Prospección (ABM, SDR) <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">ICP, listas, mensajes, cadencias y automatización en CRM para apertura de oportunidades reales.</p>
+    </div>
 
-        <article class="item">
-          <h3>Fidelización & Satisfacción (CX)</h3>
-          <p>Encuestas NPS/CSAT, customer success y experiencias de postventa que fortalecen relaciones.</p>
-          <div class="meta">
-            <span class="pill">NPS</span><span class="pill">CSAT</span>
-          </div>
-        </article>
+    <div class="sub-accordion">Material de Apoyo a la Venta <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Casos de éxito, fichas, one-pagers y presentaciones alineadas al proceso del comprador.</p>
+    </div>
 
-        <article class="item">
-          <h3>Performance de Canales Digitales</h3>
-          <p>Optimización de campañas, dashboards y automatización de marketing basada en datos.</p>
-          <div class="meta">
-            <span class="pill">Ads</span><span class="pill">Automation</span><span class="pill">KPIs</span>
-          </div>
-        </article>
-      </div>
-    </section>
+    <div class="sub-accordion">Contenido & SEO <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Web, blog, newsletters, brochures técnicos y posicionamiento mediante contenido estratégico.</p>
+    </div>
 
-    <!-- LÍNEA 3: Procesos & Capacitación -->
-    <section id="procesos" class="linea">
-      <h2>Procesos & Capacitación</h2>
-      <p class="muted">Ordenamos la operación comercial–marketing y elevamos capacidades del equipo.</p>
-      <div class="subs">
-        <article class="item">
-          <h3>Arquitectura de Procesos (CRM / Journey)</h3>
-          <p>Flujos desde lead a fidelización: etapas, SLAs, handoffs y reporting.</p>
-          <div class="meta">
-            <span class="pill">Playbooks</span><span class="pill">SLA</span>
-          </div>
-        </article>
+</div>
 
-        <article class="item">
-          <h3>Dirección Comercial & Forecast</h3>
-          <p>Acompañamiento ejecutivo en pipeline, forecast, gobierno de datos y cadencias.</p>
-          <div class="meta">
-            <span class="pill">Pipeline</span><span class="pill">Forecast</span>
-          </div>
-        </article>
+<!-- 3. Procesos & Capacitación -->
+<div class="accordion">Procesos & Capacitación <span class="arrow">▶</span></div>
+<div class="panel">
 
-        <article class="item">
-          <h3>Reuniones Efectivas</h3>
-          <p>Discovery, control de agenda, cierre de acuerdos y seguimiento.</p>
-          <div class="meta">
-            <span class="pill">Discovery</span><span class="pill">MEDDIC</span>
-          </div>
-        </article>
+    <div class="sub-accordion">Arquitectura de Procesos & CRM <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Flujos desde lead a fidelización: etapas, SLAs, handoffs y reporting.</p>
+    </div>
 
-        <article class="item">
-          <h3>Entrenamientos & Talleres</h3>
-          <p>Prospección, storytelling, CX y marketing data-driven con aplicación real.</p>
-          <div class="meta">
-            <span class="pill">Workshops</span><span class="pill">On-the-job</span>
-          </div>
-        </article>
-      </div>
-    </section>
-    <!-- LÍNEA 4: Innovación & Ecosistema -->
-    <section id="innovacion" class="linea">
-      <h2>Innovación & Ecosistema</h2>
-      <p class="muted">Impulsamos nuevos negocios y relacionamiento de alto valor en el ecosistema.</p>
+    <div class="sub-accordion">Dirección Comercial & Forecast <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Acompañamiento ejecutivo en pipeline, forecast, gobierno de datos y cadencias.</p>
+    </div>
 
-      <div class="subs">
-        <article class="item">
-          <h3>Creación de Productos Digitales</h3>
-          <p>Ideación y validación de MVPs, onboarding y métricas de adopción.</p>
-          <div class="meta">
-            <span class="pill">MVP</span><span class="pill">Onboarding</span><span class="pill">Adopción</span>
-          </div>
-        </article>
+    <div class="sub-accordion">Workshops & Entrenamientos <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Prospección, storytelling, CX y marketing data-driven con aplicación real.</p>
+    </div>
 
-        <article class="item">
-          <h3>Go-To-Market (GTM) Tech</h3>
-          <p>Estrategia de lanzamiento, pricing, mensajes clave y milestones.</p>
-          <div class="meta">
-            <span class="pill">GTM</span><span class="pill">Pricing</span><span class="pill">Milestones</span>
-          </div>
-        </article>
+</div>
 
-        <article class="item">
-          <h3>Alianzas & Vinculación</h3>
-          <p>Partners, universidades, medios y ecosistemas de innovación.</p>
-          <div class="meta">
-            <span class="pill">PR</span><span class="pill">Partners</span><span class="pill">Ecosistema</span>
-          </div>
-        </article>
+<!-- 4. Innovación & Ecosistema -->
+<div class="accordion">Innovación & Ecosistema <span class="arrow">▶</span></div>
+<div class="panel">
 
-        <article class="item">
-          <h3>Automatización & MarTech</h3>
-          <p>Implementación de HubSpot, CRM, automatización de campañas y gobierno de datos.</p>
-          <div class="meta">
-            <span class="pill">HubSpot</span><span class="pill">Automation</span><span class="pill">Escalabilidad</span>
-          </div>
-        </article>
-      </div>
-    </section>
+    <div class="sub-accordion">Creación de Productos Digitales <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Ideación y validación de MVPs, onboarding y métricas de adopción.</p>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-      © <span id="y"></span> MQLab Consulting — Santiago, Chile · 
-      <a href="mailto:felipe.molina.catalan@gmail.com">Contacto</a> · 
-      <a href="https://www.linkedin.com/in/felipemolinacatalan" target="_blank" rel="noopener">LinkedIn</a>
-    </footer>
-  </div>
+    <div class="sub-accordion">Go-To-Market Tech <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Estrategia de lanzamiento, pricing, mensajes clave y milestones.</p>
+    </div>
 
-  <!-- SCRIPT: Año dinámico + menú responsive -->
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    <div class="sub-accordion">Alianzas & Vinculación <span class="arrow">▶</span></div>
+    <div class="sub-panel">
+        <p class="panel-content">Partners, universidades, medios y ecosistemas de innovación.</p>
+    </div>
 
-    const menuBtn = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav');
-    menuBtn.addEventListener('click', () => navMenu.classList.toggle('open'));
-  </script>
+</div>
+
+<script>
+    function setupAccordion(className, panelClassName) {
+        const elements = document.querySelectorAll(className);
+        elements.forEach(el => {
+            el.addEventListener("click", function () {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    }
+
+    setupAccordion(".accordion", ".panel");
+    setupAccordion(".sub-accordion", ".sub-panel");
+</script>
 
 </body>
 </html>
-
