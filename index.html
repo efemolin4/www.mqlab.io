@@ -6,246 +6,175 @@
   <title>MQLab | Servicios de Consultoría</title>
   <meta name="description" content="Consultoría en marketing estratégico y desarrollo comercial para empresas de tecnología y servicios financieros.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Paleta Big4: sobria, corporativa */
-      --bg: #f5f7fb;          /* fondo general muy claro */
-      --surface: #ffffff;     /* superficies blancas */
-      --ink: #0f172a;         /* texto principal (azul muy oscuro) */
-      --muted: #667085;       /* texto secundario */
-      --primary: #1e3a8a;     /* azul corporativo */
-      --primary-600:#21439e;
-      --accent: #10b981;      /* acento menta */
-      --border: #e6e9f2;      /* bordes suaves */
-      --divider:#eef1f6;      /* separadores sutiles */
-      --shadow: 0 10px 24px rgba(2, 14, 38, .06);
-      --radius: 16px;
-      --radius-sm: 12px;
-      --pad: 24px;
-      --gap: 22px;
-      --wrap: 1200px;
+      --bg:#0b0d13;
+      --card:#121624;
+      --muted:#98a2b3;
+      --text:#f2f4f7;
+      --brand:#6ee7b7;
+      --accent:#60a5fa;
+      --border:#1f2433;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --radius:18px;
+      --radius-sm:12px;
+      --pad:24px;
+      --gap:22px;
     }
 
     *{box-sizing:border-box}
     html,body{
-      margin:0; padding:0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     }
-    a{color:var(--primary); text-decoration:none}
+    a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
-    .wrap{max-width:var(--wrap); margin:0 auto; padding:24px 20px}
+    .wrap{max-width:1180px;margin:0 auto;padding:40px 20px}
 
-    /* NAVBAR (Big4: limpio, sticky, fino) */
-    .topbar{
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(180%) blur(6px);
-      background: rgba(255,255,255,.85);
-      border-bottom: 1px solid var(--divider);
-    }
+    /* HEADER */
     header{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:14px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:20px 0;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px;
-      color: var(--ink);
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo-badge{
+      width:12px;height:12px;border-radius:50%;
+      background:linear-gradient(135deg,var(--brand),var(--accent));
     }
-    .badge{
-      width:14px; height:14px; border-radius:50%;
-      background: linear-gradient(135deg, var(--primary), #60a5fa);
-      box-shadow: 0 2px 6px rgba(30,58,138,.25);
-    }
-    nav{display:flex; gap:22px; align-items:center}
-    nav a{
-      color:#334155; font-weight:600; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;
-    }
+    nav{display:flex;gap:18px}
+    nav a{color:var(--muted);font-size:14px}
     .menu-toggle{
-      display:none; background:none; border:1px solid var(--border); border-radius:10px;
-      color:var(--ink); font-size:22px; padding:6px 10px; cursor:pointer;
+      display:none;background:none;border:none;color:var(--text);
+      font-size:28px;cursor:pointer;
     }
 
-    /* HERO institucional “report-like” */
+    /* HERO */
     .hero{
-      margin:28px 0 34px;
-      background: linear-gradient(180deg, #ffffff, #f7f9fd);
+      margin:18px 0 34px;
+      background:linear-gradient(180deg,rgba(110,231,183,.08),rgba(96,165,250,.06));
       border:1px solid var(--border);
-      border-radius: calc(var(--radius) + 4px);
-      box-shadow: var(--shadow);
-      padding:48px 40px;
-    }
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      color:#475569; font-size:12px; font-weight:700; letter-spacing:.12em;
-      text-transform: uppercase;
-    }
-    .eyebrow::before{
-      content:""; width:8px; height:8px; border-radius:50%; background:var(--accent);
-      box-shadow:0 0 0 4px rgba(16,185,129,.12);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:40px;
     }
     .hero h1{
-      margin:12px 0 8px;
-      font-size: clamp(28px, 4.2vw, 38px);
-      letter-spacing:-.015em; line-height:1.2; color: var(--ink);
+      margin:0 0 8px;
+      font-size:clamp(28px,5vw,36px);
+      letter-spacing:-.02em;
     }
-    .lead{
-      margin:0; color:var(--muted);
-      max-width: 860px; line-height:1.65; font-size: clamp(15px, 2.6vw, 18px);
+    .hero p{
+      margin:0;color:var(--muted);max-width:860px;line-height:1.6;
+      font-size:clamp(15px,2.8vw,17px);
     }
-    .cta{
-      display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;
-    }
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
     .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      border-radius: 12px; padding:12px 18px; font-weight:700; cursor:pointer;
-      transition: transform .06s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-      box-shadow: var(--shadow);
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(135deg,var(--brand),var(--accent));
+      color:#0b0d13;font-weight:700;border:none;border-radius:12px;
+      padding:12px 16px;box-shadow:var(--shadow);cursor:pointer;
     }
-    .btn:active{ transform: translateY(1px); }
-    .btn.primary{
-      background: var(--primary); color:#fff; border:1px solid rgba(255,255,255,.06);
-    }
-    .btn.primary:hover{ background: var(--primary-600); text-decoration:none }
-    .btn.secondary{
-      background:#fff; color: var(--primary); border:1px solid var(--border);
-    }
-    .btn.secondary:hover{ background:#f8fafc; text-decoration:none }
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
 
-    /* SECCIONES / TARJETAS */
-    .section{
-      background: var(--surface);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 26px 26px 6px;
-      box-shadow: var(--shadow);
-      margin-bottom: 26px;
+    /* SECCIONES */
+    .linea{
+      grid-column:span 12;background:var(--card);
+      border:1px solid var(--border);border-radius:var(--radius);
+      padding:28px;margin-bottom:30px;
     }
-    .section h2{
-      margin: 6px 0 6px;
-      font-size: clamp(22px, 2.6vw, 26px);
-      letter-spacing: -.01em;
-      color: var(--ink);
-    }
-    .section .subtitle{
-      margin: 0 0 8px; color: var(--muted);
-      font-size: 15.5px; line-height: 1.6;
-    }
-    .subs{display:grid; grid-template-columns: repeat(12, 1fr); gap: var(--gap); margin-top: 12px;}
-
+    .linea h2{margin:0 0 8px;font-size:clamp(22px,3vw,24px);letter-spacing:-.02em}
+    .subs{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:18px}
     .item{
-      grid-column: span 12;
-      background: #fff;
-      border:1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 18px 42px 16px 18px;
-      position: relative; cursor: pointer;
-      transition: box-shadow .2s ease, border-color .2s ease, transform .04s ease;
+      grid-column:span 12;background:#0e1220;border:1px solid var(--border);
+      border-radius:var(--radius-sm);padding:18px;position:relative;
+      padding-right:42px;cursor:pointer;
     }
-    .item:hover{
-      box-shadow: 0 14px 30px rgba(2, 14, 38, .07);
-      border-color: #dde3ef;
-    }
-    .item:active{ transform: translateY(1px) }
-    .item h3{ margin:0 0 6px; font-size: 16px; color: var(--ink) }
-    .item p{ margin:0; color: var(--muted); line-height: 1.6 }
+    .item h3{margin:0 0 6px;font-size:16px}
+    .item p{margin:0;color:var(--muted);line-height:1.55}
 
-    .meta{display:flex; gap:8px; margin-top:10px; flex-wrap: wrap}
-    .pill{
-      font-size: 11px; color:#475569; background:#f2f6ff;
-      border:1px solid #e6edff; border-radius: 999px; padding: 4px 8px;
-    }
+    .meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .pill{font-size:11px;color:#cbd5e1;border:1px dashed #243048;border-radius:999px;padding:4px 8px}
 
-    /* Despliegue de bajada (accesible) */
+    footer{margin:40px 0 10px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* --- Toggle de bajadas en subservicios --- */
     .item .desc{
-      max-height: 0; overflow: hidden; opacity: 0;
-      transition: max-height .35s ease, opacity .25s ease;
-      will-change: max-height;
+      max-height:0;overflow:hidden;opacity:0;
+      transition:max-height .35s ease, opacity .25s ease;
+      will-change:max-height;
     }
-    .item.open .desc{ opacity: 1 }
+    .item.open .desc{opacity:1}
     .item::after{
-      content: "▾";
-      position: absolute; right: 14px; top: 14px; font-size: 16px; line-height: 1;
-      color: #334155; opacity: .7; transition: transform .25s ease;
+      content:"▾";position:absolute;right:14px;top:14px;font-size:16px;
+      line-height:1;opacity:.6;transition:transform .25s ease;
     }
-    .item.open::after{ transform: rotate(180deg) }
-    .item:focus{ outline: 2px dashed #c7d2fe; outline-offset: 3px }
+    .item.open::after{transform:rotate(180deg)}
+    .item:focus{outline:2px dashed #2c364d;outline-offset:3px}
 
-    /* FOOTER */
-    footer{
-      color:#55607a; font-size: 13px; text-align:center; padding: 28px 0 24px;
-    }
-    footer .sep{ color:#c9cfdb; margin: 0 8px }
-
-    /* GRID Breakpoints */
-    @media (min-width: 720px){ .item{ grid-column: span 6 } }
-    @media (min-width: 1024px){ .item{ grid-column: span 4 } }
-
-    /* MOBILE NAV */
-    @media (max-width: 720px){
-      .menu-toggle{ display:block }
-      nav{
-        display:none; flex-direction:column; gap:14px; background:#fff;
-        border:1px solid var(--border); border-radius:12px; padding:14px;
-        position:absolute; right:20px; top:60px; width:min(86vw, 340px);
-        box-shadow: var(--shadow);
-      }
-      nav.open{ display:flex }
-      .cta .btn{ width:100%; justify-content:center }
-      .wrap{ padding: 20px 16px }
-      .hero{ padding: 34px 22px }
+    /* TABLET */
+    @media (min-width:720px){ .item{grid-column:span 6} }
+    /* DESKTOP */
+    @media (min-width:1024px){ .item{grid-column:span 4} }
+    /* MOBILE */
+    @media (max-width:480px){
+      header{flex-direction:row;}
+      nav{display:none;flex-direction:column;gap:14px;background:var(--card);padding:20px;border-radius:var(--radius-sm);}
+      nav.open{display:flex;}
+      .menu-toggle{display:block;}
+      .cta .btn{width:100%;justify-content:center;}
+      .wrap{padding:20px 14px;}
+      .hero{padding:28px;}
     }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="wrap">
-      <header>
-        <div class="brand">
-          <span class="badge" aria-hidden="true"></span>
-          <span>MQLab Consulting</span>
-        </div>
-        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
-        <nav aria-label="Navegación principal">
-          <a href="#estrategia">Estrategia</a>
-          <a href="#demanda">Demanda & CX</a>
-          <a href="#procesos">Procesos & Training</a>
-          <a href="#innovacion">Innovación</a>
-        </nav>
-      </header>
-    </div>
-  </div>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <span class="logo-badge" aria-hidden="true"></span>
+        <span>MQLab Consulting</span>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav>
+        <a href="#estrategia">Estrategia</a>
+        <a href="#demanda">Demanda & CX</a>
+        <a href="#procesos">Procesos & Training</a>
+        <a href="#innovacion">Innovación</a>
+      </nav>
+    </header>
 
-  <main class="wrap">
     <section class="hero">
-      <span class="eyebrow">Consultoría para empresas de tecnología y servicios financieros</span>
-      <h1>Resultados medibles, ejecución senior y foco en crecimiento sostenido</h1>
-      <p class="lead">Alineamos estrategia, go-to-market y operación comercial–marketing para crear demanda, acelerar el cierre y fidelizar clientes. Trabajo ejecutivo, enfoque práctico y métricas claras.</p>
+      <h1>Consultoría en Marketing Estratégico y Desarrollo Comercial</h1>
+      <p>Diseñamos y ejecutamos estrategias B2B para empresas de tecnología y servicios financieros: posicionamiento, generación de demanda, procesos comerciales y go-to-market. Enfocados en impacto medible y adopción real en equipos.</p>
       <div class="cta">
-        <a class="btn primary" href="mailto:felipe.molina.catalan@gmail.com?subject=Consulta%20Servicios%20MQLab">Agenda una conversación</a>
+        <a class="btn" href="mailto:felipe.molina.catalan@gmail.com?subject=Consulta%20Servicios%20MQLab">Agenda una conversación</a>
         <a class="btn secondary" href="#estrategia">Ver líneas de servicio</a>
       </div>
     </section>
 
-    <!-- Sección 1 -->
-    <section id="estrategia" class="section">
+    <!-- LÍNEA 1 -->
+    <section id="estrategia" class="linea">
       <h2>Estrategia & Posicionamiento</h2>
-      <p class="subtitle">Definimos visión, propuesta de valor y foco comercial para acelerar el crecimiento con claridad.</p>
+      <p class="muted">Definimos visión, propuesta de valor y foco comercial para acelerar el crecimiento con claridad.</p>
       <div class="subs">
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Estrategia de Marketing</h3>
           <p class="desc">Roadmap integral B2B: segmentación, propuesta de valor, embudos, OKRs y plan de canales.</p>
           <div class="meta"><span class="pill">Diagnóstico</span><span class="pill">OKRs</span><span class="pill">Roadmap</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Diagnóstico de Madurez Comercial y Marketing</h3>
           <p class="desc">Auditoría de marketing, prospección y posicionamiento para priorizar iniciativas de alto impacto.</p>
           <div class="meta"><span class="pill">Assessment</span><span class="pill">Prioridades</span><span class="pill">90 días</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Branding & Posicionamiento</h3>
           <p class="desc">Narrativa, mensajes clave y diferenciadores para servicios TI, QA, medios de pago y productos digitales.</p>
           <div class="meta"><span class="pill">Storytelling</span><span class="pill">Mensajes</span><span class="pill">ToV</span></div>
@@ -253,32 +182,32 @@
       </div>
     </section>
 
-    <!-- Sección 2 -->
-    <section id="demanda" class="section">
+    <!-- LÍNEA 2 -->
+    <section id="demanda" class="linea">
       <h2>Generación de Demanda & Fidelización</h2>
-      <p class="subtitle">Implementamos prospección, contenido y performance digital para generar pipeline y retención.</p>
+      <p class="muted">Implementamos prospección, contenido y performance digital para generar pipeline y retención.</p>
       <div class="subs">
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Estrategia de Prospección (Outbound, ABM, SDR)</h3>
           <p class="desc">ICP, listas, mensajes, cadencias y automatización en CRM para apertura de oportunidades reales.</p>
           <div class="meta"><span class="pill">ABM</span><span class="pill">SDR</span><span class="pill">HubSpot</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Material de Apoyo a la Venta</h3>
           <p class="desc">Casos de éxito, fichas, one-pagers y presentaciones alineadas al proceso del comprador.</p>
           <div class="meta"><span class="pill">Sales Enablement</span><span class="pill">One-Pager</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Contenido Corporativo</h3>
           <p class="desc">Web, blog, newsletters y brochures técnicos/comerciales para posicionamiento y conversión.</p>
           <div class="meta"><span class="pill">SEO</span><span class="pill">Thought Leadership</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Fidelización & Satisfacción (CX)</h3>
           <p class="desc">Encuestas NPS/CSAT, customer success y experiencias de postventa que fortalecen relaciones.</p>
           <div class="meta"><span class="pill">NPS</span><span class="pill">CSAT</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Performance de Canales Digitales</h3>
           <p class="desc">Optimización de campañas, dashboards y automatización de marketing basada en datos.</p>
           <div class="meta"><span class="pill">Ads</span><span class="pill">Automation</span><span class="pill">KPIs</span></div>
@@ -286,27 +215,27 @@
       </div>
     </section>
 
-    <!-- Sección 3 -->
-    <section id="procesos" class="section">
+    <!-- LÍNEA 3 -->
+    <section id="procesos" class="linea">
       <h2>Procesos & Capacitación</h2>
-      <p class="subtitle">Ordenamos la operación comercial–marketing y elevamos capacidades del equipo.</p>
+      <p class="muted">Ordenamos la operación comercial–marketing y elevamos capacidades del equipo.</p>
       <div class="subs">
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Arquitectura de Procesos (CRM / Journey)</h3>
           <p class="desc">Flujos desde lead a fidelización: etapas, SLAs, handoffs y reporting.</p>
           <div class="meta"><span class="pill">Playbooks</span><span class="pill">SLA</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Dirección Comercial & Forecast</h3>
           <p class="desc">Acompañamiento ejecutivo en pipeline, forecast, gobierno de datos y cadencias.</p>
           <div class="meta"><span class="pill">Pipeline</span><span class="pill">Forecast</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Reuniones Efectivas</h3>
           <p class="desc">Discovery, control de agenda, cierre de acuerdos y seguimiento.</p>
           <div class="meta"><span class="pill">Discovery</span><span class="pill">MEDDIC</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Entrenamientos & Talleres</h3>
           <p class="desc">Prospección, storytelling, CX y marketing data-driven con aplicación real.</p>
           <div class="meta"><span class="pill">Workshops</span><span class="pill">On-the-job</span></div>
@@ -314,42 +243,41 @@
       </div>
     </section>
 
-    <!-- Sección 4 -->
-    <section id="innovacion" class="section">
+    <!-- LÍNEA 4 -->
+    <section id="innovacion" class="linea">
       <h2>Innovación & Ecosistema</h2>
-      <p class="subtitle">Impulsamos nuevos negocios y relacionamiento de alto valor en el ecosistema.</p>
+      <p class="muted">Impulsamos nuevos negocios y relacionamiento de alto valor en el ecosistema.</p>
       <div class="subs">
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Creación de Productos Digitales</h3>
           <p class="desc">Ideación y validación de MVPs, onboarding y métricas de adopción.</p>
           <div class="meta"><span class="pill">MVP</span><span class="pill">Onboarding</span><span class="pill">Adopción</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Go-To-Market (GTM) Tech</h3>
           <p class="desc">Estrategia de lanzamiento, pricing, mensajes clave y milestones.</p>
           <div class="meta"><span class="pill">GTM</span><span class="pill">Pricing</span><span class="pill">Milestones</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Alianzas & Vinculación</h3>
           <p class="desc">Partners, universidades, medios y ecosistemas de innovación.</p>
           <div class="meta"><span class="pill">PR</span><span class="pill">Partners</span><span class="pill">Ecosistema</span></div>
         </article>
-        <article class="item" tabindex="0" role="button" aria-expanded="false">
+        <article class="item">
           <h3>Automatización & MarTech</h3>
           <p class="desc">Implementación de HubSpot, CRM, automatización de campañas y gobierno de datos.</p>
           <div class="meta"><span class="pill">HubSpot</span><span class="pill">Automation</span><span class="pill">Escalabilidad</span></div>
         </article>
       </div>
     </section>
-  </main>
 
-  <footer>
-    © <span id="y"></span> MQLab Consulting <span class="sep">·</span> Santiago, Chile
-    <span class="sep">·</span>
-    <a href="mailto:felipe.molina.catalan@gmail.com">Contacto</a>
-    <span class="sep">·</span>
-    <a href="https://www.linkedin.com/in/felipemolinacatalan" target="_blank" rel="noopener">LinkedIn</a>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+      © <span id="y"></span> MQLab Consulting — Santiago, Chile ·
+      <a href="mailto:felipe.molina.catalan@gmail.com">Contacto</a> ·
+      <a href="https://www.linkedin.com/in/felipemolinacatalan" target="_blank" rel="noopener">LinkedIn</a>
+    </footer>
+  </div>
 
   <script>
     // Año dinámico
@@ -358,38 +286,53 @@
     // Menú responsive
     const menuBtn = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav');
-    if (menuBtn && navMenu) menuBtn.addEventListener('click', () => navMenu.classList.toggle('open'));
+    if (menuBtn && navMenu) {
+      menuBtn.addEventListener('click', () => navMenu.classList.toggle('open'));
+    }
 
-    // Toggle de bajadas (accesible)
-    const cards = document.querySelectorAll('.item');
-    cards.forEach(card => {
+    // Toggle de bajadas en cada subservicio
+    const items = document.querySelectorAll('.item');
+    items.forEach(card => {
+      // Asegurar accesibilidad
+      card.setAttribute('tabindex','0');
+      card.setAttribute('role','button');
+      card.setAttribute('aria-expanded','false');
+
+      // Primer párrafo como .desc (por si faltó en HTML)
       const desc = card.querySelector('.desc') || card.querySelector('p');
       if (!desc) return;
-      // estado inicial
+      desc.classList.add('desc');
       desc.style.maxHeight = '0px';
+
       const toggle = () => {
         const isOpen = card.classList.toggle('open');
         card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        desc.style.maxHeight = isOpen ? (desc.scrollHeight + 'px') : '0px';
+        if (isOpen) {
+          desc.style.maxHeight = desc.scrollHeight + 'px';
+        } else {
+          desc.style.maxHeight = '0px';
+        }
       };
+
       card.addEventListener('click', e => {
         if (e.target.closest('a')) return; // no interferir con enlaces
         toggle();
       });
       card.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
       });
     });
 
-    // (Opcional) Solo una tarjeta abierta por sección:
-    // Descomenta para activarlo.
+    // (Opcional) Solo uno abierto a la vez:
+    // Descomenta para que al abrir uno, cierre los demás.
     /*
-    document.querySelectorAll('.section .subs').forEach(group => {
-      group.addEventListener('click', e => {
-        const current = e.target.closest('.item');
-        if (!current) return;
-        group.querySelectorAll('.item.open').forEach(other => {
-          if (other !== current) {
+    items.forEach(card => {
+      card.addEventListener('click', () => {
+        items.forEach(other => {
+          if (other !== card && other.classList.contains('open')) {
             const d = other.querySelector('.desc');
             other.classList.remove('open');
             other.setAttribute('aria-expanded','false');
