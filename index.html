@@ -1,144 +1,259 @@
-<main class="page">
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MQLab Consulting | Servicios</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050816;
+      --card:#0b1020;
+      --hero:#0b1324;
+      --muted:#9ca3af;
+      --text:#f9fafb;
+      --brand:#6ee7b7;
+      --accent:#60a5fa;
+      --border:#1f2937;
+      --pill:#111827;
+      --shadow:0 18px 45px rgba(0,0,0,.45);
+      --radius-xl:26px;
+      --radius:18px;
+      --radius-sm:12px;
+      --gap:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1180px;margin:0 auto;padding:32px 20px 60px}
+    header.top-nav{display:flex;align-items:center;justify-content:space-between;padding:8px 0 18px}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:#e5e7eb}
+    .brand-dot{width:9px;height:9px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    nav a{color:#9ca3af;font-size:13px;margin-left:22px}
+    nav a:hover{color:#e5e7eb}
+    .hero{margin-top:14px;margin-bottom:32px;padding:38px 34px;border-radius:var(--radius-xl);background:radial-gradient(circle at 0 0,rgba(110,231,183,.22),transparent 55%),radial-gradient(circle at 100% 0,rgba(96,165,250,.18),transparent 55%),var(--hero);border:1px solid #111827;box-shadow:var(--shadow)}
+    .hero h1{margin:0 0 10px;font-size:32px;letter-spacing:-.03em}
+    .hero p{margin:0 0 22px;color:var(--muted);max-width:760px;line-height:1.6;font-size:15px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;border:1px solid transparent;cursor:pointer;text-decoration:none}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#020617;box-shadow:0 12px 32px rgba(15,118,110,.45)}
+    .btn-secondary{background:transparent;color:#e5e7eb;border-color:#374151}
+    .sections{display:flex;flex-direction:column;gap:26px}
+    .linea{background:var(--card);border-radius:var(--radius-xl);padding:26px 26px 24px;border:1px solid var(--border);box-shadow:0 16px 38px rgba(0,0,0,.45)}
+    .linea-header{margin-bottom:18px}
+    .linea-header h2{margin:0 0 6px;font-size:22px;letter-spacing:-.02em}
+    .linea-header p{margin:0;color:var(--muted);font-size:14px}
+    .tag-line{margin-top:8px;font-size:11px;color:#9ca3af}
+    .tag-line span{display:inline-block;background:#020617;border-radius:999px;border:1px dashed #1f2937;padding:3px 9px;margin-right:6px}
+    .subs{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);margin-top:12px}
+    .item{grid-column:span 12;background:#020617;border-radius:var(--radius);border:1px solid #111827;padding:16px 16px 14px;position:relative}
+    .item h3{margin:0 0 6px;font-size:15px}
+    .item p{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.55}
+    .meta{display:flex;flex-wrap:wrap;gap:6px}
+    .pill{font-size:11px;background:var(--pill);border-radius:999px;border:1px dashed #1f2937;padding:3px 8px;color:#e5e7eb}
+    @media (min-width:720px){
+      .item{grid-column:span 6}
+    }
+    @media (min-width:1024px){
+      .item{grid-column:span 4}
+    }
+    footer{margin-top:40px;text-align:center;font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top-nav">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>MQLab Consulting</span>
+      </div>
+      <nav>
+        <a href="#estrategia">Estrategia</a>
+        <a href="#prospeccion">Demanda &amp; Prospección</a>
+        <a href="#fidelizacion">Fidelización</a>
+      </nav>
+    </header>
 
-  <!-- NAV SIMPLE (usa tus estilos actuales) -->
-  <header class="top-nav">
-    <div class="brand">MQLab Consulting</div>
-    <nav>
-      <a href="#estrategia">Estrategia</a>
-      <a href="#prospeccion">Prospección</a>
-      <a href="#fidelizacion">Fidelización</a>
-    </nav>
-  </header>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Consultoría en Marketing Estratégico y Desarrollo Comercial</h1>
+      <p>
+        Acompañamos a empresas de tecnología y servicios financieros en la construcción de estrategias
+        que alinean posicionamiento, prospección y experiencia de cliente. Optimizamos procesos comerciales,
+        impulsamos la generación de demanda y habilitamos equipos para capturar y sostener valor en el tiempo.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="mailto:felipe.molina.catalan@gmail.com?subject=Consulta%20Servicios%20MQLab">
+          Agenda una conversación
+        </a>
+        <a class="btn-secondary" href="#estrategia">
+          Ver servicios
+        </a>
+      </div>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Consultoría en Marketing Estratégico y Desarrollo Comercial</h1>
-    <p>
-      Acompañamos a empresas de tecnología y servicios financieros en la construcción de estrategias
-      que alinean posicionamiento, prospección y experiencia de cliente. Optimizamos procesos
-      comerciales, impulsamos la generación de demanda y habilitamos equipos para capturar y sostener
-      valor en el tiempo.
-    </p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="mailto:felipe.molina.catalan@gmail.com?subject=Consulta%20Servicios%20MQLab">
-        Agenda una conversación
-      </a>
-      <a class="btn-secondary" href="#estrategia">Ver servicios</a>
+    <div class="sections">
+
+      <!-- 1. Estrategia & Posicionamiento -->
+      <section id="estrategia" class="linea">
+        <div class="linea-header">
+          <h2>Estrategia &amp; Posicionamiento</h2>
+          <p>Definimos visión, propuesta de valor y foco comercial para acelerar el crecimiento de tu negocio.</p>
+          <div class="tag-line">
+            <span>#EstrategiaB2B</span><span>#BrandPositioning</span><span>#GrowthPlan</span>
+          </div>
+        </div>
+        <div class="subs">
+          <article class="item">
+            <h3>Estrategia de Marketing</h3>
+            <p>Diseño de estrategias integrales B2B: posicionamiento, segmentación, embudos y OKRs comerciales.</p>
+            <div class="meta">
+              <span class="pill">Diagnóstico</span>
+              <span class="pill">OKRs</span>
+              <span class="pill">Roadmap</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Branding</h3>
+            <p>Construcción de narrativa de marca, identidad verbal y posicionamiento para servicios tecnológicos y B2B.</p>
+            <div class="meta">
+              <span class="pill">Storytelling</span>
+              <span class="pill">Mensajes clave</span>
+              <span class="pill">Identidad verbal</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Dirección Comercial</h3>
+            <p>Acompañamiento a gerencias comerciales en procesos, forecast, CRM y definición de KPIs accionables.</p>
+            <div class="meta">
+              <span class="pill">Pipeline</span>
+              <span class="pill">Forecast</span>
+              <span class="pill">CRM</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Comunicación y Cultura</h3>
+            <p>Planes de comunicación interna y cultura organizacional alineados a la estrategia de negocio y equipos.</p>
+            <div class="meta">
+              <span class="pill">Comunicación interna</span>
+              <span class="pill">Cultura</span>
+              <span class="pill">Engagement</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>RRPP · Comunicación · Cultura</h3>
+            <p>Relaciones públicas B2B y comunicación corporativa para posicionar a la empresa en su ecosistema.</p>
+            <div class="meta">
+              <span class="pill">PR B2B</span>
+              <span class="pill">Medios</span>
+              <span class="pill">Reputación</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Creación de Productos Digitales</h3>
+            <p>Ideación de MVPs, diseño de onboarding digital y fichas de servicio para nuevos productos o servicios.</p>
+            <div class="meta">
+              <span class="pill">MVP</span>
+              <span class="pill">Onboarding</span>
+              <span class="pill">Product Strategy</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2. Prospección & Generación de Demanda -->
+      <section id="prospeccion" class="linea">
+        <div class="linea-header">
+          <h2>Prospección &amp; Generación de Demanda</h2>
+          <p>Implementamos prospección, contenido y performance digital para construir un pipeline sano y predecible.</p>
+          <div class="tag-line">
+            <span>#DemandGeneration</span><span>#ABM</span><span>#Pipeline</span>
+          </div>
+        </div>
+        <div class="subs">
+          <article class="item">
+            <h3>Estrategia de Prospección</h3>
+            <p>Procesos Outbound, ABM y SDR con automatización en CRM para apertura y avance de oportunidades.</p>
+            <div class="meta">
+              <span class="pill">ABM</span>
+              <span class="pill">SDR</span>
+              <span class="pill">Cadencias</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Generación de Contenido Corporativo</h3>
+            <p>Contenido web, blog, presentaciones y newsletters alineados al discurso comercial y al ciclo de compra.</p>
+            <div class="meta">
+              <span class="pill">Contenido</span>
+              <span class="pill">Thought leadership</span>
+              <span class="pill">Soporte comercial</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Estrategia de Material de Apoyo a la Venta</h3>
+            <p>Argumentarios, casos de éxito, fichas técnicas y decks para habilitar a los equipos de ventas.</p>
+            <div class="meta">
+              <span class="pill">Sales enablement</span>
+              <span class="pill">Casos de éxito</span>
+              <span class="pill">Decks</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Performance de Canales Digitales</h3>
+            <p>Optimización de ADS, email y canales orgánicos con foco en CPL, conversión y aprendizaje continuo.</p>
+            <div class="meta">
+              <span class="pill">Google/LinkedIn Ads</span>
+              <span class="pill">CPL</span>
+              <span class="pill">Experimentación</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. Fidelización y Satisfacción -->
+      <section id="fidelizacion" class="linea">
+        <div class="linea-header">
+          <h2>Fidelización y Satisfacción</h2>
+          <p>Diseñamos experiencias de postventa y dinámicas de relación que aumentan retención, expansión y recomendación.</p>
+          <div class="tag-line">
+            <span>#CustomerExperience</span><span>#Retention</span><span>#Upsell</span>
+          </div>
+        </div>
+        <div class="subs">
+          <article class="item">
+            <h3>Fidelización y Satisfacción</h3>
+            <p>Programas de retención, encuestas de experiencia (NPS/CSAT) y gestión de feedback para cuentas clave.</p>
+            <div class="meta">
+              <span class="pill">NPS</span>
+              <span class="pill">CSAT</span>
+              <span class="pill">Loops de mejora</span>
+            </div>
+          </article>
+
+          <article class="item">
+            <h3>Estrategia de Reuniones Efectivas</h3>
+            <p>Diseño y entrenamiento de reuniones comerciales, de discovery y seguimiento que mejoran la tasa de cierre.</p>
+            <div class="meta">
+              <span class="pill">Discovery</span>
+              <span class="pill">Next steps</span>
+              <span class="pill">Seguimiento</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
     </div>
-  </section>
 
-  <!-- CATEGORÍA 1: ESTRATEGIA & POSICIONAMIENTO -->
-  <section id="estrategia" class="category">
-    <h2>Estrategia & Posicionamiento</h2>
-    <p class="category-subtitle">
-      Definimos visión, propuesta de valor y foco comercial para acelerar el crecimiento de tu negocio.
-    </p>
-
-    <article class="service">
-      <h3>Estrategia de Marketing</h3>
-      <p>
-        Diseño de estrategias integrales B2B: posicionamiento, segmentación, embudos y OKRs comerciales.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Branding</h3>
-      <p>
-        Construcción de narrativa de marca, identidad verbal y posicionamiento para servicios tecnológicos y B2B.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Dirección Comercial</h3>
-      <p>
-        Acompañamiento a gerencias comerciales en diseño de procesos, forecast, gobierno de datos, CRM y KPIs.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Comunicación y Cultura</h3>
-      <p>
-        Planes de comunicación interna y cultura organizacional alineados a la estrategia de negocio y a los equipos.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>RRPP · Comunicación · Cultura</h3>
-      <p>
-        Relaciones públicas B2B y comunicación corporativa para posicionar a la empresa en su ecosistema y mercados clave.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Creación de Productos Digitales</h3>
-      <p>
-        Ideación de MVPs, diseño de onboarding digital, fichas de servicio y validación con usuarios para nuevos productos o servicios.
-      </p>
-    </article>
-  </section>
-
-  <!-- CATEGORÍA 2: PROSPECCIÓN & GENERACIÓN DE DEMANDA -->
-  <section id="prospeccion" class="category">
-    <h2>Prospección & Generación de Demanda</h2>
-    <p class="category-subtitle">
-      Diseñamos e implementamos estrategias de prospección y contenido para construir un pipeline sano y predecible.
-    </p>
-
-    <article class="service">
-      <h3>Estrategia de Prospección</h3>
-      <p>
-        Implementación de procesos Outbound, ABM y SDR con automatización en CRM (por ejemplo, HubSpot) para apertura de oportunidades reales.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Generación de Contenido Corporativo</h3>
-      <p>
-        Redacción estratégica de contenido (web, blog, presentaciones, newsletters, brochures) alineado al discurso comercial y al ciclo de compra.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Estrategia de Generación de Material de Apoyo a la Venta</h3>
-      <p>
-        Creación de argumentarios, casos de éxito, fichas técnicas y presentaciones comerciales orientadas a habilitar a los equipos de venta.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Performance de Canales Digitales</h3>
-      <p>
-        Análisis y optimización de campañas de ADS, email marketing, redes profesionales y SEO/SEM, con foco en costo por lead y conversión.
-      </p>
-    </article>
-  </section>
-
-  <!-- CATEGORÍA 3: FIDELIZACIÓN Y SATISFACCIÓN -->
-  <section id="fidelizacion" class="category">
-    <h2>Fidelización y Satisfacción</h2>
-    <p class="category-subtitle">
-      Diseñamos experiencias de postventa, encuestas y dinámicas de relación que aumentan retención, expansión y recomendación de clientes.
-    </p>
-
-    <article class="service">
-      <h3>Fidelización y Satisfacción</h3>
-      <p>
-        Diseño de programas de retención, encuestas de experiencia (CX), NPS/CSAT y gestión de feedback para mejorar la relación con cuentas clave.
-      </p>
-    </article>
-
-    <article class="service">
-      <h3>Estrategia de Reuniones Efectivas</h3>
-      <p>
-        Capacitación y estructura para reuniones comerciales, de descubrimiento y de seguimiento que mejoran tasa de avance y cierre.
-      </p>
-    </article>
-  </section>
-
-  <!-- FOOTER SIMPLE -->
-  <footer class="site-footer">
-    © MQLab Consulting — Santiago, Chile ·
-    <a href="mailto:felipe.molina.catalan@gmail.com">Contacto</a> ·
-    <a href="https://www.linkedin.com/in/felipemolinacatalan" target="_blank" rel="noopener">LinkedIn</a>
-  </footer>
-</main>
+    <footer>
+      © <span id="year"></span> MQLab Consulting — Santiago, Chile ·
+      <a href="mailto:felipe.molina.ca
