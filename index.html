@@ -60,6 +60,28 @@
       .item{grid-column:span 4}
     }
     footer{margin-top:40px;text-align:center;font-size:12px;color:var(--muted)}
+
+    /* NAV MOBILE: orden en 3 columnas */
+@media (max-width: 640px) {
+  header.top-nav {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  header.top-nav nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 0;
+  }
+
+  header.top-nav nav a {
+    font-size: 13px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
   </style>
 </head>
 <body>
