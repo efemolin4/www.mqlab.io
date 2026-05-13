@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MQLab Consulting | Servicios</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#050816;
+      --bg:#070b18;
       --card:#0b1020;
       --hero:#0b1324;
       --muted:#9ca3af;
       --text:#f9fafb;
-      --brand:#6ee7b7;
-      --accent:#60a5fa;
+      --brand:#00d4c8;
+      --accent:#00a8a0;
       --border:#1f2937;
       --pill:#111827;
       --shadow:0 18px 45px rgba(0,0,0,.45);
@@ -29,16 +29,15 @@
     a:hover{text-decoration:underline}
     .wrap{max-width:1180px;margin:0 auto;padding:32px 20px 60px}
     header.top-nav{display:flex;align-items:center;justify-content:space-between;padding:8px 0 18px}
-    .brand{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:#e5e7eb}
-    .brand-dot{width:9px;height:9px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    .brand{display:flex;align-items:center}
     nav a{color:#9ca3af;font-size:13px;margin-left:22px}
     nav a:hover{color:#e5e7eb}
-    .hero{margin-top:14px;margin-bottom:32px;padding:38px 34px;border-radius:var(--radius-xl);background:radial-gradient(circle at 0 0,rgba(110,231,183,.22),transparent 55%),radial-gradient(circle at 100% 0,rgba(96,165,250,.18),transparent 55%),var(--hero);border:1px solid #111827;box-shadow:var(--shadow)}
+    .hero{margin-top:14px;margin-bottom:32px;padding:38px 34px;border-radius:var(--radius-xl);background:radial-gradient(circle at 0 0,rgba(0,212,200,.18),transparent 55%),radial-gradient(circle at 100% 0,rgba(0,168,160,.14),transparent 55%),var(--hero);border:1px solid #111827;box-shadow:var(--shadow)}
     .hero h1{margin:0 0 10px;font-size:32px;letter-spacing:-.03em}
     .hero p{margin:0 0 22px;color:var(--muted);max-width:760px;line-height:1.6;font-size:15px}
     .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
     .btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;border:1px solid transparent;cursor:pointer;text-decoration:none}
-    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#020617;box-shadow:0 12px 32px rgba(15,118,110,.45)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#070b18;box-shadow:0 12px 32px rgba(0,212,200,.30)}
     .btn-secondary{background:transparent;color:#e5e7eb;border-color:#374151}
     .sections{display:flex;flex-direction:column;gap:26px}
     .linea{background:var(--card);border-radius:var(--radius-xl);padding:26px 26px 24px;border:1px solid var(--border);box-shadow:0 16px 38px rgba(0,0,0,.45)}
@@ -88,8 +87,11 @@
   <div class="wrap">
     <header class="top-nav">
       <div class="brand">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span>MQLab Consulting</span>
+        <svg height="28" viewBox="0 0 148 28" xmlns="http://www.w3.org/2000/svg" aria-label="MQLab" role="img">
+          <text y="24" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="26" letter-spacing="-0.03em">
+            <tspan fill="#00d4c8">MQL</tspan><tspan fill="#ffffff">ab</tspan>
+          </text>
+        </svg>
       </div>
       <nav>
         <a href="#estrategia">Estrategia</a>
@@ -107,9 +109,7 @@
         impulsamos la generación de demanda y habilitamos equipos para capturar y sostener valor en el tiempo.
       </p>
       <div class="hero-actions">
-       <a class="btn-primary" href="mailto:felipe.molina@mqlab.io?subject=Agendar%20una%20conversación">
-  Agenda una conversación
-</a>
+        <a class="btn-primary" href="mailto:felipe.molina@mqlab.io?subject=Agendar%20una%20conversaci%C3%B3n">Agenda una conversación</a>
         <a class="btn-secondary" href="#estrategia">
           Ver servicios
         </a>
